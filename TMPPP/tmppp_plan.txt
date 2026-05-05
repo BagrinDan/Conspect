@@ -1,0 +1,31 @@
+
+2. Abs Factory, 
+   Factory method
+
+3. Builder, 
+   Prototype, 
+   Singleton 
+ 
+4. Adapter,
+   Composite,
+   Façade
+
+5. Flyweight, 
+   Decorator, 
+   Bridge,
+   Proxy
+
+6. Strategy, 
+   Observer, 
+   Command, 
+   Memento,
+   Iterator
+
+7. Chain of Responsibility,
+   State, 
+   Mediator, 
+   Template Method, 
+   Visitor
+
+
+Project: Abs Factory, Factory method, Builder, Adapter, Composite, Decorator, Flyweight, Bridge, Iterator, ??? 

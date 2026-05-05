@@ -1,0 +1,11 @@
+
+=======================================
+show dbs - показать все базы
+use 'bd_name' - использовать базу
+show collections - показать коллекции
+
+
+db.'col_name'.find() - для поиска
+
+
+mongoimport --db 'db_name' --collection 'coll_name' --file /home/scooperlosses/DB/MongoDB/iris.json --jsonArray

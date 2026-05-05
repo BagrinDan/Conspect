@@ -1,0 +1,63 @@
+
+
+1. Abstract Factory
+=================================
+public interface PizzaIngredientFactory {
+    Dough createDough();
+    Sauce createSauce();
+    ...
+}
+=================================
+
+2. Concrete Factory
+=======================================
+public class NYPizzaIngredientFactory impl PizzaIngredientFactory {
+    @Override
+    public Dough createDough(){
+        return new ThinCrustDogugh();
+    }
+    ...
+}
+
+public class ChicagoPizzaIngredientFactory impl PizzaIngredientFactory{
+    @Override 
+    public Dough createDough(){
+        return new ThickCrustDough();
+    }
+    ...
+}
+
+====================================
+
+3. Abstract Product
+
+====================================
+public interface Dough {}
+public interface Sauce {}
+====================================
+
+4. Concrete Product
+
+====================================
+For NYPizzaIngredientFactory...
+public class ThinCrustDough implements Dough { ... }
+public class MarinaraSauce implements Sauce { ... }
+public class ReggianoCheese implements Cheese { ... }
+
+For ChicagoPizzaIngredientFactory...
+public class ThickCrustDough implements Dough { ... }
+public class PlumTomatoSauce implements Sauce { ... }
+public class MozzarellaCheese implements Cheese { ... }
+====================================
+
+5. Client
+====================================
+public class CheesePizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
+
+    public void prepare(){
+        dough = ingredientFactory.createDough()
+        sauce = imgredientFactory.createSauce()
+    }
+}
+====================================

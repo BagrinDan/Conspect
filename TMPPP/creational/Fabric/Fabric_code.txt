@@ -1,0 +1,87 @@
+-----------------
+-- Пример кода --
+-----------------
+
+Тема: Пицца
+
+// Enum 
+
+	enum PizzaType {
+		CHEESE, PEPPERONI, CLAM, VEGGIE
+	}
+
+
+
+// [Product]
+
+	abstract class Pizza {
+			String name;
+			String dough;
+			String sauce;
+			List<Strinng> toppings = new ArrayList<>();
+
+			void prepare(){
+					sout("preparing " + );
+					sout("tossing dough...:);
+					for(String topping : toppings) {
+							sout(topping)
+					}
+
+
+
+// [Concrete Product] NYPizza
+
+	class NYStylePizza extends Pizza{
+		public NYStylePizza()
+			name = ...
+			dought = ...
+			sauce = ...
+
+			toppings.add ..
+
+	}
+
+
+
+// [Creator] - PizzaFactory
+
+	public interface PizzaFactory {
+		PizzaType getType()
+		Pizza create();
+	}
+
+
+
+// [Producer] 
+
+	class PizzaProducer
+		private final Map<PizzaType, PizzaStore> map = new HashMap<>()
+		
+		public NYPizzaStore(List<PizzaStore> list)
+			this.map = map.stream()
+				.collect(Collectors.toMap(
+				CoffeeFactory::getType,
+				map -> map
+			));
+
+
+		protected Pizza createPizza(PizzaType type)
+			PizzaStire creator = creators.get(type);
+			return creator.create()
+		}
+
+
+
+// [Concrete Creator]
+
+	public NYPizzaStore implements PizzaFactory
+		@Override
+		public PizzaType getType() 
+			return PizzaType.NYPIZZA
+		
+		}
+
+		@Override
+		public Pizza create()
+			return new NyPizza()
+		
