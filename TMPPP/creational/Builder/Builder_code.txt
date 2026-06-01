@@ -3,7 +3,7 @@
 **[NO DIRECTOR]**
 =================
 
-// [Class Product]
+// [Class Product] - базовый класс
 
     public class Vacantion{
         public String hotel;
@@ -16,7 +16,8 @@
     }
 
 
-// [Abstract Builder]
+
+// [Abstract Builder] - абстрактный билдер
 
     public abs class VacantionBuilder{
         protected Vacantion vacantion = new Vacantion(); // Объект которого мы будем строить
@@ -28,9 +29,13 @@
             return vacantion;
         }
 
+        public Vacation build() {
+            return this.vacation1;
+        }
+
     }
 
-// [Concrete Builder]
+// [Concrete Builder] - конкретный билдер
 
     public class ConcreteVacantionBuilder extends VacantionBuilder{
         @Override
@@ -51,12 +56,6 @@ public main() {
         ...
         getVacantion(); 
 }
-
-
-
-=====================
-** [WITH DIRECTOR] **
-=====================
 
 // [DIRECTOR]
 
@@ -81,6 +80,11 @@ public main() {
         }
     }
 
+
+=====================
+** [WITH DIRECTOR] **
+=====================
+
 // [MAIN]
 
 public main(){
@@ -94,3 +98,5 @@ public main(){
 
     sout(trip);
 }
+
+

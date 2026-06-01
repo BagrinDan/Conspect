@@ -1,0 +1,43 @@
+
+
+[Projects]
+
+    Programming:
+        - LeetCode
+        - Collections,
+        - Threds,
+        - Deploying with Azure
+        - SpringBoot Project: Amodeus
+
+    Data Engeeniring:
+        - Leetcode
+        - Databricks
+        - Snowflake
+        - Simple local project on SQL:
+        - Pipeline with apache airflow/Azure on Python
+
+    AI:
+        - ML Projects
+        - DP Projects
+    
+    LLM:
+        - RAG system;
+        - Advance RAG system;
+
+    CyberSec:
+        - Wireshark
+        - Network/Infrastructure Pentesting,
+        - Reverse Engineering & Binary Exploitation
+        
+        - ISO/IEC 27001
+        - SOC 2 (Type I / Type II):
+        - ITAM, BCP
+        - GDPR / HIPAA
+
+    Besides:
+        - Vim,
+        - Linux,
+        - ESP32 (FipperZero or AIBuddy)
+        - Read fucking books
+
+    

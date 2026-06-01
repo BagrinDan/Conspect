@@ -28,4 +28,6 @@
    Visitor
 
 
-Project: Abs Factory, Factory method, Builder, Adapter, Composite, Decorator, Flyweight, Bridge, Iterator, ??? 
+Project: Abs Factory, Factory method, Builder, Adapter, Composite, Decorator, Flyweight, Bridge, Iterator, Strategy, Memento, Facade
+
+

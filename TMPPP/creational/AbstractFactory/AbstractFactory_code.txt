@@ -1,5 +1,5 @@
 
-
+=================================
 1. Abstract Factory
 =================================
 public interface PizzaIngredientFactory {
@@ -7,14 +7,19 @@ public interface PizzaIngredientFactory {
     Sauce createSauce();
     ...
 }
-=================================
 
+=================================
 2. Concrete Factory
-=======================================
+=================================
 public class NYPizzaIngredientFactory impl PizzaIngredientFactory {
     @Override
     public Dough createDough(){
         return new ThinCrustDogugh();
+    }
+
+    @Override
+    public Dough createSauce(){
+        return new MarinaraSauce();
     }
     ...
 }
@@ -24,13 +29,16 @@ public class ChicagoPizzaIngredientFactory impl PizzaIngredientFactory{
     public Dough createDough(){
         return new ThickCrustDough();
     }
+
+    @Override 
+    public Dough createDough(){
+        return new PlumTomatoSauce();
+    }
     ...
 }
 
 ====================================
-
 3. Abstract Product
-
 ====================================
 public interface Dough {}
 public interface Sauce {}

@@ -1,0 +1,45 @@
+
+
+    > DNS (domain name system) - влется система которая позволяет переобразовать 
+    Домен в IP. А переобразование с IP в Домен достигается за счет дополнительной функции - Reverse DNS (PTR record)
+        > Порт: 53
+        > Тип соединение: (основоной) UDP, (для больших ответов и зон передач) TCP
+
+    > 
+
+    Типы записей:
+        > A - это домен → IPv4
+        > AAAA - это домен → IPv6
+        > PTR record - это IP → Domain
+        > CNAME (Canonical name) - домен → домен(алиас) 
+        > MX (Mail Exchange) → чтобы понять куда отправлять почту
+            домен → почта 
+        > TXT - текстовая запись
+        > NS - чтобы понять какие DNS-сервервы отвечают за домены
+        > SOA (Start of Authority) - содержит: главный DNS сервер, email админа, TTL и версию зоны 
+        > SRV - где находится сервер
+        > CAA - кто может выпустить SSL сертификаты 
+
+    Сам процесс:
+        [Client/Browser]
+            - проверяет browser cache. Если пусто - идет дальше
+        
+        [Stub Resolver (в ОС)]
+            - принимает запрос от браузера и отправляет его на DNS server
+        
+        [Recursive Resolver]
+            - узнает АЙПИ
+        
+        [ROOT Server]
+            - 
+        
+        [TLD DNS Server]
+            - находит authoritative сервер:
+                например: .md, .com
+
+        [Authoritative DNS Server]
+            - Он отвечает:
+                A record
+                AAAA record
+                MX
+                PTR (если reverse зона)

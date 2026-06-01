@@ -58,15 +58,14 @@
 		private final Map<PizzaType, PizzaStore> map = new HashMap<>()
 		
 		public NYPizzaStore(List<PizzaStore> list)
-			this.map = map.stream()
-				.collect(Collectors.toMap(
+			this.map = list.stream().collect(Collectors.toMap(
 				CoffeeFactory::getType,
 				map -> map
 			));
 
 
 		protected Pizza createPizza(PizzaType type)
-			PizzaStire creator = creators.get(type);
+			PizzaStore creator = creators.get(type);
 			return creator.create()
 		}
 
@@ -78,7 +77,6 @@
 		@Override
 		public PizzaType getType() 
 			return PizzaType.NYPIZZA
-		
 		}
 
 		@Override
