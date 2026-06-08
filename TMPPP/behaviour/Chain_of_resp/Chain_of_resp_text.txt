@@ -17,6 +17,42 @@
 
     > Handler - конкретный обработчик 
 
+==========================
+-- Случаи использования -- 
+==========================
+
+    - Когда нужно провести цепочную валидацию реквеста
+
+======================
+-- Ключевые моменты --
+======================
+
+    
+    public abstract class Handler {
+        // 1. Ссылка на следующтй хэндлер
+        Handler next;
+
+
+        // 2. Сеттер
+        public Handler setHander(Handler next){
+            this.next = next;
+            return next;
+        }
+        
+
+        // 3. Методы обрабодки
+        public abstract boolean handle(String login, int password, String status);
+        
+
+        // 4. Передача следующему хэндлеру
+        public boolean handleNext(String login, int password, String status){
+            if(next == null){
+                return true;
+            }
+            return next.handle(login, password, status);
+        }
+    }
+
 ==================
 --Принципы Солид--
 ==================

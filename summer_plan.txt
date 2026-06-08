@@ -1,31 +1,34 @@
 
 
 [Projects]
-
     Programming:
-        - LeetCode
+        - LeetCode (Neet 150)
         - Collections,
-        - Threds,
+        - Threads,
         - Deploying with Azure
-        - SpringBoot Project: Amodeus
+        Projects:
+        - SpringBoot Project: Amadeus
+        - Fastapi: Finish
 
     Data Engeeniring:
-        - Leetcode
+        - Leetcode (SQL 30)
         - Databricks
         - Snowflake
+        Projects:
         - Simple local project on SQL:
         - Pipeline with apache airflow/Azure on Python
 
     AI:
         - ML Projects
-        - DP Projects
+        - DL Projects
     
     LLM:
         - RAG system;
         - Advance RAG system;
 
     CyberSec:
-        - Wireshark
+        - nmap, Wireshark, tcpdump, airodump, 
+
         - Network/Infrastructure Pentesting,
         - Reverse Engineering & Binary Exploitation
         
@@ -36,7 +39,7 @@
 
     Besides:
         - Vim,
-        - Linux,
+        - Hyprland Rice,
         - ESP32 (FipperZero or AIBuddy)
         - Read fucking books
 

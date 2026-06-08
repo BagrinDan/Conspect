@@ -16,7 +16,8 @@
 
     > Prototype <<interface>> - родительский интерфейс
 
-    > ConcretePrototype1,2 - класс который наследуется от интефрейса
+    > ConcretePrototy
+    pe1,2 - класс который наследуется от интефрейса
 
 ========================
 --Случаи использования--
@@ -31,10 +32,10 @@
         
         @Override
         public Student clone() {
-            Address copiedAddress =
+            Address independentAddress =
                 new Address(address.city);
 
-            return new Student(name, copiedAddress);
+            return new Student(name, independentAddress);
         }
 
     > Swallow-copy - копирует объект и если есть списки или вложенные объект - копирует только ссылку.

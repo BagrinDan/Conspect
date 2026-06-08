@@ -65,8 +65,8 @@
 
 
 		protected Pizza createPizza(PizzaType type)
-			PizzaStore creator = creators.get(type);
-			return creator.create()
+			PizzaStore creator = map.get(type);
+			return creator.create();
 		}
 
 
