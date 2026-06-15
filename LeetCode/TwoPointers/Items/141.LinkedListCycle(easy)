@@ -1,0 +1,50 @@
+
+    > Суть задачи: Понять если ноды связанного списока формируют цикл
+
+    > Как решается: 
+        Two Pointer - Быстрый и медленный. 
+            - Ставим два указателя на начальную ноду списка. Двигаем slow на одну ноду, fast на 2.
+            Идея в том что если они будут равны, то есть циклы, так как slow физически не может быть равен с fast. 
+            Значит fast прошел через цикл и 
+    
+        HashSet - просто сравниваем hash текущего нода с тем что есть в сете.
+
+    > Код:
+    // TP
+        public boolean hasCycle(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+
+            while(fast != null && fast.next != null){
+                slow = slow.next;
+                fast = fast.next.next;
+
+                if(slow == fast){
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+    // HASHSET 
+        public boolean hasCycle(ListNode head) {
+            if(head == null){
+                return false;
+            }
+
+            Set<ListNode> set = new HashSet<>();
+            ListNode curr = head.next;
+
+            while(curr != null){
+                if(set.contains(curr)){
+                    return true;
+                }
+
+                set.add(curr);
+
+                curr = curr.next;
+            }
+
+            return false;
+        }

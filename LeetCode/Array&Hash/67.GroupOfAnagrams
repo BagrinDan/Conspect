@@ -1,0 +1,43 @@
+
+
+    > Суть задачи: Найти и вернуть группы аннограм
+
+    > Как решается: HashMap
+        - Ключом будет строка, а значением будет список строк. Берется каждая строка и сортируется. 
+        Если строка не равна ключу, то создается маппа с пустым список. если равно, то добавляется.
+        под конец возвращается список из мапы
+
+        > Дано: [ate, tea, eta, ebt, bte, axt]
+
+            Map<Char, List<String>>
+
+                ate = [ate, tea, eta]
+                bet = [ebt, bte]
+                atx = [axt]
+
+
+    > Код: TC - O(n⋅klogk), Mem - O(N)
+        JAVA: [Через сортировку]
+            class Solution {
+                public List<List<String>> groupAnagrams(String[] strs) {
+                    if(strs.length == 0){
+                        return new ArrayList<>();
+                    }
+
+                    Map<String, List<String>> map = new HashMap<>();
+
+                    for(String str : strs){
+                        char[] charArr = str.toCharArray(); // e, a, t
+                        Arrays.sort(charArr); // a, e, t
+                        String key = String.valueOf(charArr); // aet
+
+                        if(!map.containsKey(key)){
+                            map.put(key, new ArrayList<>());
+                        }
+
+                        map.get(key).add(str);
+                    }
+
+                    return new ArrayList(map.values());
+                }
+            }

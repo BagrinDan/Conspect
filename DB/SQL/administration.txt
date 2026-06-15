@@ -1,0 +1,21 @@
+===============================
+-- Создать пользователя в бд --
+===============================
+
+CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'StrongPassword123@';
+
+GRANT ALL PRIVILEGES ON student_db.* TO 'app_user'@'localhost';
+or
+GRANT SELECT, INSERT, UPDATE, DELETE ON student_db.* TO 'app_user'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+
+=========================
+-- Проверить и удалить --
+=========================
+
+DROP USER 'user1'@'localhost'
+
+SELECT User, Host FROM mysql.user;

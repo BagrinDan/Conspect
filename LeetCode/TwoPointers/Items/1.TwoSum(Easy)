@@ -1,0 +1,49 @@
+
+
+    > Суть задачи: найти сумму в массиве из двух чисел которая будет равна таргету
+
+    > Как решается: Хэш-таблица / Two Pointer - [С двух сторон]
+        - Хэш подойдет если массив не отсортирован: runtime O(n),
+                                                    memory O(n) 
+
+        - TP если массив отсортирован; runtime: O(n),
+                                       memory: O(1)
+
+    > Код:
+
+        // ХЭШ: 
+
+            Map<Integer, Integer> map = new HashMap<>(); //K: nums, V: index
+
+            for(int i = 0; i < nums.length; i++){
+                int diff = target - nums[i];
+
+                if(map.containsKey(diff)){
+                    return new int[] {map.get(diff), i};
+                }
+
+                map.put(nums[i], i);
+            }
+
+            return new int[] {};
+
+
+        // TP:
+
+            int left = 0;
+            int right = nums.length - 1;
+
+            while(left < right){
+                int sum = nums[right] + nums[left];
+
+                if(sum == target){
+                    return new int[] {left, right};
+                }
+
+                if(sum > target){
+                    right--;
+                } else{
+                    left++;
+                }
+            }
+    

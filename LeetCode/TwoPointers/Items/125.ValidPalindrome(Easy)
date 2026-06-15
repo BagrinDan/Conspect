@@ -1,0 +1,48 @@
+
+
+    > Суть задачи: найти полиндром в предложениях игнорируя все неалфабетные символы
+
+    > Как решается: Two-pointer - С двух сторон
+
+    > Код:
+
+    class Solution {
+    public boolean isPalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+
+        String s1 = s.toLowerCase();
+
+        while(left < right){
+            while(left < right){ // Тут двигаем левый если есть символ
+                char l = s1.charAt(left);
+
+                if((l < 97 || l > 122) && (l < 48 || l > 57)){
+                    left++;
+                } else{
+                    break;
+                }
+            }
+
+            while(left < right){ // Тут двигаем правый если есть символ
+                char r = s1.charAt(right);
+
+                if((r < 97 || r > 122) && (r < 48 || r > 57)){
+                    right--;
+                } else{
+                    break;
+                }
+            }
+
+            if(left < right){
+                if(s1.charAt(left) != s1.charAt(right)){
+                    return false;
+                }
+                left++;
+                right--;
+            }
+        }
+
+        return true;
+    }
+}

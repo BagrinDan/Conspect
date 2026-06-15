@@ -1,0 +1,37 @@
+
+
+    > Суть задачи: найти самую большую площадь с водой
+
+    > Как решается: Two Pointers - С двух сторон
+        - Просто двигаем самый маленький указатель и под конец возвращаем самую большую площадь
+
+        Формула: Area = width * height;
+                 width = right - left;
+                 height = Math.min(heigth[left], heigth[right]) 
+    
+    > Код
+        class Solution {
+            public int maxArea(int[] height) {
+                int left = 0;
+                int right = height.length - 1;
+                int area = 0;
+
+                while(left < right){
+                    int width = right - left;
+
+                    int cur_height = Math.min(height[left], height[right]);
+
+                    int cur_area = width * cur_height;
+
+                    area = Math.max(area, cur_area);
+
+                    if(height[left] < height[right]){
+                        left++;
+                    } else{
+                        right--;
+                    }
+                }
+
+                return area;
+            }
+        }
