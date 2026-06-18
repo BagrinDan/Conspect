@@ -53,5 +53,26 @@
 
             - Перебор:
                 
-        
-    
+
+    ============
+    -- Python --
+    ============
+        HashSet
+            Инициализация:
+                set = set()
+                set = {1, 2, ...}
+                
+                list = [1, 2, 3]
+                set = set(list)
+
+            Операции:
+                set.add(1)
+                set.update([1, 3, 4])
+                set.remove(1)
+                num_set.discard(1) <- Не вызовет ошибку в отличие от remove()
+
+                if "apple" in fruits:
+                    print("Яблоко уже есть в множестве")
+
+                if "cherry" not in fruits:
+                    fruits.add("cherry")
