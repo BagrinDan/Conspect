@@ -1,0 +1,59 @@
+
+    > Суть: Вывести результат выражения который приходит по польскому алгоритму
+
+    > Как решается: стэк
+        например у нас "2", "1", "+", "3", "*"
+        Ставим элементы до тех пор пока не будет оператор
+        Когда мы доходим до него, то просто берем первые два элемента стэка и делаем операцию
+        Результат пушим в стэк
+
+    > Код:
+        JAVA
+            class Solution {
+            public int evalRPN(String[] tokens) {
+                if(tokens.length == 1){
+                    int a = Integer.parseInt(tokens[0]);
+                    return a;
+                }
+
+                ArrayDeque<String> stack = new ArrayDeque<>();
+                int answer = 0;
+
+                for(int i = 0; i < tokens.length; i++){
+                    if(tokens[i].equals("+") || 
+                    tokens[i].equals("-") ||
+                    tokens[i].equals("*") ||
+                    tokens[i].equals("/") 
+                    ) { 
+                        int result = 0;
+
+                        String elem1 = stack.pop();
+                        String elem2 = stack.pop();
+
+                        int b = Integer.parseInt(elem1);
+                        int a = Integer.parseInt(elem2);
+
+                        result = calculate(a, tokens[i], b);
+
+                        stack.push(String.valueOf(result));
+                    } else{
+                        stack.push(tokens[i]);
+                    }
+                }
+
+                answer = Integer.parseInt(stack.pop());
+
+                return answer;
+            }
+
+
+            public int calculate(int a, String operation, int b){
+                return switch(operation){
+                    case "+" -> a + b; 
+                    case "-" -> a - b;
+                    case "/" -> a / b;
+                    case "*" -> a * b;
+                    default -> throw new IllegalArgumentException("Unknown: " + operation);
+                };
+            }
+        }

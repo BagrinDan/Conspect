@@ -24,3 +24,29 @@
 DROP USER 'user1'@'localhost'
 
 SELECT User, Host FROM mysql.user;
+
+
+=====================
+-- Создать таблицу --
+=====================
+
+    MySQL/ MariaDB:
+        CREATE TABLE users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            uuid VARCHAR(36) NOT NULL,            
+            username VARCHAR(50) NOT NULL UNIQUE,
+            password VARCHAR(255) NOT NULL,            
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+    
+
+    MSSQL:
+        CREATE TABLE users (
+            id INT IDENTITY(1,1) PRIMARY KEY,
+            uuid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+            username NVARCHAR(50) NOT NULL UNIQUE,
+            password NVARCHAR(255) NOT NULL,            
+            created_at DATETIME2 NOT NULL DEFAULT GETDATE()
+        );
+
+        
