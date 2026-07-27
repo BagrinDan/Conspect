@@ -5,14 +5,11 @@
     > Как решается: Хэш-таблица / Two Pointer - [С двух сторон]
         - Хэш подойдет если массив не отсортирован: runtime O(n),
                                                     memory O(n) 
-
         - TP если массив отсортирован; runtime: O(n),
                                        memory: O(1)
 
     > Код:
-
         // ХЭШ: 
-
             Map<Integer, Integer> map = new HashMap<>(); //K: nums, V: index
 
             for(int i = 0; i < nums.length; i++){
@@ -27,11 +24,27 @@
 
             return new int[] {};
 
+        Python
+            num_map = dict()
+
+            for i, num in enumerate(nums):
+                dif = target - num
+
+                if dif in num_map:
+                    return [num_map[dif], i]
+
+                num_map[num] = i
+
+            return []
+                    
+
 
         // TP:
 
             int left = 0;
             int right = nums.length - 1;
+
+            Arrays.sort(nums);
 
             while(left < right){
                 int sum = nums[right] + nums[left];
@@ -47,3 +60,4 @@
                 }
             }
     
+
