@@ -35,3 +35,14 @@ SPRINGBOOT:
 
     > default void hello(){}
         default - модификатор доступа метода, который позволяет вписать реализацию прямо в интерфейсе
+
+    > var 
+    !!! Java строго типизирован - тип определяется жестко в момент компиляции
+
+    > instanceof
+
+    > sealed class 
+
+    > records
+
+    > outerloop

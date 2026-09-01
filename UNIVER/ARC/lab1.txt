@@ -1,0 +1,81 @@
+
+Labs: 1.05
+      1.17
+
+
+Switch order boot:
+
+    1. Switch loads a power-on self-test (POST) program stored in ROM.
+    POST checks the CPU subsystem. It tests the CPU, DRAM, adn the portion of the flash
+    device that makes up the flash file system.
+
+    2. Next, switch loads the boot loader software. The boot loader is a small program stored
+    in ROM that is run immediately after POST successfully copletes.
+
+    3. The boot loader performs low-level CPU init. It init the CPU regist, which control
+    where pysical memory is ampped the quantity of memory and its speed.
+
+    4. The boot loaderd. initializes the flash file system on the system boar
+
+    5. Finally, the boot loader locates and loads a fefault IOS operating system software image into
+    memory and gives control of the switch over to the IOS
+
+
+Switch команды:
+
+    S1# show running-config [ИЛИ] sh run -> посмотреть ВРЕМЕННУЮ конфигурацию.    
+
+    S1# show startup-config [ИЛИ] sh start -> посмотреть ПОСТОЯННУЮ конфигурацию
+
+    S1# show interfaces - показать инфу об интерфейсах
+    
+    S1# show flash - показать информацию про файловую систему флэш
+
+    S1# show version - показать стостояние системы
+
+    S1# show history - показать историю команд
+
+    S1# show ip/ipv6 interface - показать инфу об интерфейсах IP 
+
+    S1# show mac address-table - показать мак адресс 
+
+
+Switch режим:
+
+    > SYST (System) - показывает общий статус систем/питания свича.
+        * Зеленый: Система работает нормально.
+
+        * Мигающий зеленый: Система загружается.
+
+        * Желтый/Амбер: Ошибка системы или проблемы с питанием.
+
+    > RPS (Redundant Power System) - статус внешнео резервного питания
+        * Зеленый: Резервное питание подключено и готово к работе.
+
+        * Мигающий зеленый: Подключено, но питает другой коммутатор в стеке.
+
+        * Выключен: Резервный блок не подключен.
+
+    > STAT (Status) Режим отображения активности портов
+        * Зеленый: Линк есть (устройство подключено).
+
+        * Мигающий зеленый: Идет передача данных через порт.
+
+        * Выключен: Кабель не подключен или порт выключен (shutdown).
+    
+    > DUPLX (Duplex) Режим отображения ружим дуплекса на портах
+        * Зеленый: FULL_DUPLEX
+        * Выключен: HALF_DUPLEX
+
+    > SPEED: Режим отображения скорости рабоыт портов.
+        * ВЫключен: 10 Мбит/с
+        * Зеленый: 100 Мбитс/с 
+        * Мигающий зеленый: 1000 Мбит/с 
+    
+    > PoE (Power over Ethernet) Режим отображения статус подачи питания 
+        * Зеленый: Питание успешно подается га подключенное 
+        * Мигающий зеленый/желтый: Ошибка подачи питания/превышен лимит мощности
+
+
+> Auto-MDIX (Automatic Medium Dependent Interface Crossover) — это технология, которая позволяет сетевому порту коммутатора или сетевой карты автоматически определять 
+тип подключенного кабеля (прямой или перекрестный) и корректировать назначение контактов на лету.
