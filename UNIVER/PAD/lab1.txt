@@ -1,0 +1,44 @@
+
+==================
+    План лабы 1
+==================
+
+> Тема: Dezvoltarea unui sistem distribuit de colectare a telemetriei
+și a jurnalelor, bazat pe evenimente și pe modelul Publish/Subscribe.
+
+
+> Брокер — Java
+
+    Почему: На Java очень наглядно реализуется архитектура сервера. 
+    Легко показать преподавателю многопоточность (ExecutorService, ServerSocket), блокирующие/неблокирующие очереди (BlockingQueue) и thread-safe коллекции (ConcurrentHashMap).
+
+> Pub 1 (Метрики CPU/RAM) — Go
+
+    Почему: Go создавался для системных утилит. 
+    Через библиотеку gopsutil или стандартный пакет runtime 
+    он снимает метрики железа в пару строк кода и дает минимальную нагрузку на систему.
+
+> Pub 2 (Логи) — Python
+
+    Почему: На Python проще и быстрее всего написать генератор логов или эмулятор ошибок 
+    (например, случайная генерация событий INFO, WARN, ERROR раз в секунду).
+
+> Sub 1 & Sub 2 (Отображение метрик и алармы) — Go
+
+    Почему: На Go с помощью библиотек charmbracelet/bubbletea или gizak/termui
+    можно сделать потрясающий консольный TUI-интерфейс (в стиле htop или btop), 
+    который мгновенно считывает JSON из сокета и обновляет графики.
+
+> K3s/Docker:
+    Контейнеры: pub1 (Go) Сбор метрик
+                pub2 (Python) Сбор логов
+                sub2 (Go) Показ логов 
+
+    Поды: брокер (Java)
+          sub1 (Go) Графана интерфейс
+
+
+> Storage
+    *Transient (In-memory)
+
+    *Persistent (On-Disk) - Loki (Logs)/ InfluxDB (Metrics)

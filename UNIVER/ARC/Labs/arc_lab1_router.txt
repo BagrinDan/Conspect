@@ -1,0 +1,24 @@
+
+
+> Конфигурация роутера и входа по ssh: 
+    * configure terminal ### Входим в глобальный режим 
+    * hostname R1 ### Назначить имя роутера 
+    * enable secret class ### Создать защищенный пароль "class" для входа в configure terminal 
+
+    * line console 0 ### Выбрать интерфейс консоли 
+    * password cisco ### Назначить незащищенный пароль "cisco"
+    * login ### Она включат проверку пароля при подключении к этой линии 
+    * exit 
+
+    * line vty 0 4 ### Выбрать виртуальные интерфейсы (для ssh сессии) о 0 до 4 включительно
+    * password cisco
+    * login 
+    * exit 
+
+    * service password-encryption ### Защищаем назначенные пароли
+    * banner motd # AUTH ACCESS ONLY # ### Ставим баннер для незаконных входов
+    * copy running-config startup-config ### Сохраняем изменения в NVRAM
+
+
+> Конфигурация интерфейсов LAN роутера:
+    

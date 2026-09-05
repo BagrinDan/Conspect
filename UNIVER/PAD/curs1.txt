@@ -1,0 +1,42 @@
+
+> Sistem distribuit - 
+
+
+> Sistem centralizat (monolit) - 
+
+
+> Sistem descentralizat (microservice) - 
+    Example: GIT
+
+
+> Broker - 
+    * Logs - 
+
+    * Routing - 
+
+    * Adapter - 
+
+    * Inricer - 
+
+    * Reciver - XML/JSON и брокер жонглирует ими ????
+
+
+> Storage:
+
+    * Persistant (In-Disk) -
+
+    * Transistent (In-memory) - 
+
+
+??? IPFS
+
+> Cost - 
+    * Uptime
+    * SAL 
+
+    *p50
+    *p75
+
+    *Amdahl = s(n) = 1/ (s + (1 - s)/ n)
+
+    * RFC ????

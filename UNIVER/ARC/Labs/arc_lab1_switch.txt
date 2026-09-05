@@ -1,0 +1,108 @@
+
+Labs: 1.0.5 [X]
+      1.1.7
+      1.3.6
+
+Switch order boot:
+
+    1. Switch loads a power-on self-test (POST) program stored in ROM.
+    POST checks the CPU subsystem. It tests the CPU, DRAM, adn the portion of the flash
+    device that makes up the flash file system.
+
+    2. Next, switch loads the boot loader software. The boot loader is a small program stored
+    in ROM that is run immediately after POST successfully copletes.
+
+    3. The boot loader performs low-level CPU init. It init the CPU regist, which control
+    where pysical memory is ampped the quantity of memory and its speed.
+
+    4. The boot loaderd. initializes the flash file system on the system boar
+
+    5. Finally, the boot loader locates and loads a fefault IOS operating system software image into
+    memory and gives control of the switch over to the IOS
+
+
+Switch команды:
+
+    > Режимы 
+        enable - режим рут
+        configure terminal - превилигированный режим
+    
+    > Конфигурация 
+        show running-config [ИЛИ] sh run -> посмотреть ВРЕМЕННУЮ конфигурацию (RAM).    
+        show startup-config [ИЛИ] sh start -> посмотреть ПОСТОЯННУЮ конфигурацию (NVRAM)
+        show flash - показать информацию про файловую систему флэш
+
+        copy running-config startup-config - сохранить ВРЕМЕННУЮ конфигурацию в ПОСТОЯННУЮ 
+
+    > Порты/Интерфейсы
+        show interfaces [interface id] - показать инфу об интерфейсах
+        show ip/ipv6 interface - показать инфу об интерфейсах IP 
+        show mac address-table - показать мак адресс 
+
+    > Прочее:
+        show version - показать стостояние системы
+        show history - показать историю команд
+
+Switch пример:
+    > Настройка порта свича:
+        enable ### Войти в root 
+        сonfigure terminal ### Войти в превилигированный режим
+        interface FastEthernet0/1 ### Войти в настройки интерфейса 
+        duplex auto ### Ставим FULL_DUPLEX
+        speed auto ### Скорость 100
+        mdix auto ### Режим MDIX
+        end ### Выходим из превилигированный режим 
+        copy running-config startup-config ### Сохранить конфиг 
+
+    > Настройка SSH:
+        show ip ssh ### Позволяет понять если свич поддерживает ssh и какую версию поддреживает 
+        ip domain-name cisco.name ### Задаём доменное имя необходимое для криптации
+        crypto key generate rsa ### Генерим ассимитричные ключ RSA 
+        username [login] secret [password] ### Создаем учетку админа
+
+        line vty 0 15 ### Выбираем виртуальные терминальные линии 
+        transport input ssh ### Включаем для них вход по ssh 
+        login local ### ставим как логин названия switch 
+        exit ### Выходим
+
+        ip ssh version 2 ### Включаем вторую версию ssh
+
+Switch режим:
+
+    > SYST (System) - показывает общий статус систем/питания свича.
+        * Зеленый: Система работает нормально.
+        * Выключен: Система выключена.
+        * Желтый: Ошибка системы или проблемы с питанием.
+
+    > RPS (Redundant Power System) - статус внешнего резервного питания
+        * Зеленый: Резервное питание подключено и готово к работе.
+        * Мигающий зеленый: Подключено, но питает другой коммутатор в стеке.
+        * Выключен: Резервный блок не подключен.
+        * Желтый: В режиме ожидания или система неисправна.
+        * Мерцающий желтый: Внутриние питание неисправно и
+        RPS обеспечивает питание системы
+
+    > STAT (Status) Режим отображения активности портов
+        * Зеленый: Линк есть (устройство подключено).
+        * Мигающий зеленый: Идет передача данных через порт.
+        * Выключен: Кабель не подключен или порт выключен (shutdown).
+    
+    > DUPLX (Duplex) Режим отображения ружим дуплекса на портах
+        * Зеленый: FULL_DUPLEX
+        * Выключен: HALF_DUPLEX
+
+    > SPEED: Режим отображения скорости рабоыт портов.
+        * ВЫключен: 10 Мбит/с
+        * Зеленый: 100 Мбитс/с 
+        * Мигающий зеленый: 1000 Мбит/с 
+    
+    > PoE (Power over Ethernet) Режим отображения статус подачи питания 
+        * Зеленый: Питание успешно подается га подключенное 
+        * Мигающий зеленый/желтый: Ошибка подачи питания/превышен лимит мощности
+
+
+> Auto-MDIX (Automatic Medium Dependent Interface Crossover) — это технология, 
+которая позволяет сетевому порту коммутатора или сетевой карты автоматически определять 
+тип подключенного кабеля (прямой или перекрестный) и корректировать назначение контактов на лету.
+
+
