@@ -73,15 +73,17 @@ CiscoOS команды:
 
 Switch пример:
     > Настройка порта свича:
-        enable ### Войти в root 
-        сonfigure terminal ### Войти в превилигированный режим
+        : enable ### Войти в root 
+        # сonfigure terminal ### Войти в превилигированный режим
+        (conf) interface FastEthernet0/1 ### Войти в настройки интерфейса 
 
-        interface FastEthernet0/1 ### Войти в настройки интерфейса 
-        duplex auto ### Ставим FULL_DUPLEX
-        speed auto ### Скорость 100
-        mdix auto ### Режим MDIX
-        end ### Выходим из превилигированный режим 
-        copy running-config startup-config ### Сохранить конфиг 
+        (conf) duplex auto ### Ставим FULL_DUPLEX
+        (conf) speed auto ### Скорость 100
+        (conf) mdix auto ### Режим MDIX
+
+        (conf)end ### Выходим из превилигированный режим 
+        # copy running-config startup-config ### Сохранить конфиг 
+
 
     > Настройка SSH:
         show ip ssh ### Позволяет понять если свич поддерживает ssh и какую версию поддреживает 
