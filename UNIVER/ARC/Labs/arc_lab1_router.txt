@@ -20,5 +20,31 @@
     * copy running-config startup-config ### Сохраняем изменения в NVRAM
 
 
+
 > Конфигурация интерфейсов LAN роутера:
-    
+    * interface gigabitethernet 0/0/0 [ИЛИ] interface g0/0/0 ###
+    * ip address 192.168.10.1 255.255.255.0
+    * ipv6 address 2001:db8:acad:1::1/64
+    * description Link to LAN 1
+    * no shutdown
+    * exit
+
+    * interface gigabitethernet 0/0/1
+    * ip address 192.168.11.1 255.255.255.0
+    * ipv6 address 2001:db8:acad:2::1/64
+    * description Link to LAN 2
+    * not shutdown 
+    * exit 
+
+    * interface serial 0/0/0 ### Интерфейс для соединения между роутерами (Устарел)
+    * ip address 209.165.200.225 255.255.255.252
+    * ipv6 address 2001:db8:acad:3::225/64
+    * description Link to R2
+    * no shutdow
+
+
+
+> Конфигурация loopback для роутера
+    * interface loopback 0
+    * ip address 10.0.0.1 255.255.255.0
+    * exit

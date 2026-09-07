@@ -17,36 +17,65 @@ Switch order boot:
 
     4. The boot loaderd. initializes the flash file system on the system boar
 
-    5. Finally, the boot loader locates and loads a fefault IOS operating system software image into
+    5. Finally, the boot loader locates and loads a default IOS operating system software image into
     memory and gives control of the switch over to the IOS
 
 
-Switch команды:
+CiscoOS команды:
 
-    > Режимы 
-        enable - режим рут
-        configure terminal - превилигированный режим
+    > Режимы:
+        enable [ИЛИ] ena - Привилегированный режим
+        configure terminal [ИЛИ] conf t- превилигированный режим
     
-    > Конфигурация 
+    > Конфигурация:
         show running-config [ИЛИ] sh run -> посмотреть ВРЕМЕННУЮ конфигурацию (RAM).    
         show startup-config [ИЛИ] sh start -> посмотреть ПОСТОЯННУЮ конфигурацию (NVRAM)
         show flash - показать информацию про файловую систему флэш
 
         copy running-config startup-config - сохранить ВРЕМЕННУЮ конфигурацию в ПОСТОЯННУЮ 
 
-    > Порты/Интерфейсы
-        show interfaces [interface id] - показать инфу об интерфейсах
-        show ip/ipv6 interface - показать инфу об интерфейсах IP 
+    > Порты/Интерфейсы:
+        show interfaces [interface id] - показать инфу о конкретном интерфейсе
+        show ip/ipv6 interface - показать инфу об интерфейсах IP на layer 3-4
         show mac address-table - показать мак адресс 
+        show interface - показывает инфу об интерфейсах на layer 1-2 
 
     > Прочее:
         show version - показать стостояние системы
         show history - показать историю команд
 
+    > Диагностика:
+        * show ip/ipv6 brief interface - Выводит компактный список всех сетевых интерфейсов устройства 
+        с их IP-адресами (IPv4 или IPv6) и текущим статусом
+
+        * show ip route - локальная вариация traceroute
+            - L local: показывает айпи адрес устройства 
+            - C connected: показывает к какой локальной сети мы подключены
+            - S static: ручной прописаный маршрут.
+            - R RIP (routing info prot): роутер каждый 30 сек обменивается своей таблицей маршурутизацией с 
+            соседями. Позволяет лучше подобрать маршрут или обновить его
+            - M Mobile IP: протокол для мобильных сетей 
+            - B BGP (Border Gateway Protocol): соединяет роутер и провайдер
+
+        * show running-config interface [интерфейс (g0/1)]- показать конфиг определённого интерфейса из RAM
+        
+
+    > Модификаторы: 
+        - section: показывает определённую секцию
+        - include (аналог grep)
+        - exclude: (аналог grep -v) выводит всё кроме указаной строки
+        - begin: выводит весь конфиг 
+    
+    > История команд: 
+        - terminal history size 200: позволяет запомнить до 200 команд. Лимит 256 
+        - show history: показавать историю команд 
+        
+
 Switch пример:
     > Настройка порта свича:
         enable ### Войти в root 
         сonfigure terminal ### Войти в превилигированный режим
+
         interface FastEthernet0/1 ### Войти в настройки интерфейса 
         duplex auto ### Ставим FULL_DUPLEX
         speed auto ### Скорость 100
@@ -104,5 +133,8 @@ Switch режим:
 > Auto-MDIX (Automatic Medium Dependent Interface Crossover) — это технология, 
 которая позволяет сетевому порту коммутатора или сетевой карты автоматически определять 
 тип подключенного кабеля (прямой или перекрестный) и корректировать назначение контактов на лету.
+    * Используем кабель Crossover если устройства не поддерживают mdix 
+    * Используем straight-through если устройства поддреживают mdix
 
-
+    > Ingress (Входящий трафик) - обозначает интерфейс на которомы пришел пакет 
+    > Egress (Выходящий трафик) - обозначает интерфейс с которого пришел пакет
