@@ -2,3 +2,9 @@
     анализ - проектирование - создание - тестирование - продакш
 
 
+> Sistem informationa - un ansambly integrat de oameni, date, procese, reguli, metode, tehnologii.
+
+> Unitatea Social Economica - intreprindere, institutie, socetate comerciala, unitate administrativ teritoriala.
+    * sistemul de conducere
+    * sistemul informational 
+    * sistemul operational
