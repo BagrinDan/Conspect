@@ -1,0 +1,20 @@
+
+> Date semistructurare
+
+> Date structurate 
+
+> Date nestructurate 
+
+proto 
+avro
+thrift
+
+
+    Sender -> Python 
+
+    Broker -> Go  
+        Pattern Stragety: Pentru a lucra cu mai multe tipuri de date 
+
+    Reciver -> JavaScript 
+
+

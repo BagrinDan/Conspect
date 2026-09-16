@@ -1,0 +1,44 @@
+
+    > Normal range: 1 - 1005 (1002, так как последние 3 для легаси систем)
+
+    > Extended range: 1006 - 4096
+
+
+    > Создания vlan
+        .. Создать VLAN ..
+            conf t 
+                vlan [vlan id] ### vlan id -> 10, 20, 108 и так далее
+                name [name vlan] 
+            end
+
+            show vlan brief ### СПИСОК ВСЕХ VLAN 
+
+            conf t
+                no vlan [vlan id] ### УДАЛЕНИЕ VLAN 
+            end 
+        ..
+
+        !!! Пример Создания VLAN 
+            conf t
+                vlan 20
+                name student
+            end 
+
+        .. Подключить VLAN к интерфейсу 
+            conf t 
+                interface [interface id] 
+                switchport mode access 
+                switchport access vlan [vlan id]
+            end 
+        ..
+
+        !!! Пример подключения VLAN с телефоном
+            conf t
+                interface fa0/6
+                switchport mode access 
+                switchport access vlan 20
+                mls qos trust cos
+                swithcport voice vlan 150
+            end 
+
+        
