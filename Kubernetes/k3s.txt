@@ -1,0 +1,29 @@
+kubectl config current-context
+kubectl get nodes
+
+# Сборка ОБРАЗА
+docker build -t project_name:local .
+docker images
+
+# ИМПОРТ 
+docker save proje_name:local | sudo k3s ctr images import - # Импорт докер образа в k3s
+
+sudo k3s ctr images list | grep sub # Проверить 
+
+kubectl apply -f influxdb-secret.yaml # Приминяем секрет сначала
+kubectl apply -f sub1-deployment.yaml # Потом приминить манифест
+
+# ПРОВЕРКА
+kubectl get pods                        # статус: Running / ImagePullBackOff / CrashLoopBackOff
+kubectl logs -f deployment/sub1         # логи конкретного деплоймента
+kubectl describe pod <имя-пода>         # детали, если что-то не так
+
+
+# Перезапустить
+kubectl rollout restart deployment/sub2 # Жеский перезaпуск
+
+kubectl apply -f ~/PAD/Lab1/subs/k3s/sub1-deployment.yaml # Мягкий перезпуск
+
+
+# ОСТАНОВИТЬ
+kubectl scale deployment/sub1 --replicas=0
