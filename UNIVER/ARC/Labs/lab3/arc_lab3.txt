@@ -1,0 +1,14 @@
+
+
+> STP - протокол который помогает избегать зацикленой передачи
+пакетов в сети
+    * BPDU (Bridge Protocol Data Unit) - 
+
+    > RSTP
+
+    > PVST+ и Rapid PVST
+
+    > MSTP 
+
+
+> Broadcast Storm - 

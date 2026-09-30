@@ -18,22 +18,19 @@
 
                 for (int i = 0; i < s.length(); i++) {
                     char c = s.charAt(i);
-                    map.put(c, map.getOrDefault(c, 0) + 1); // Создаем мапу на основе слова: e - 2, t - 1
+                    map.put(c, map.getOrDefault(c, 0) + 1); // альтернатива: map.merge('c', 1, Integer::sum);
                 }
 
                 for (int i = 0; i < t.length(); i++) {
                     char c = t.charAt(i);
-                    map.put(c, map.getOrDefault(c, 0) - 1); 
+                    map.put(c, map.getOrDefault(c, 0) - 1); // map.merge('c', -1, Integer::sum);
                 }
 
-                List<Integer> values = new ArrayList<>(map.values());
-
-                for(int i = 0; i < values.size(); i++){
-                    if(!values.get(i).equals(0)){
+                for(int count : map.values()){
+                    if(count != 0){
                         return false;
                     }
                 }
-
                 return true;
             }
         }
