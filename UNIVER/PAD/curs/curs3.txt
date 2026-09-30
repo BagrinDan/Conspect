@@ -1,0 +1,30 @@
+
+Сurs 3
+
+
+    > IEEE 1471 - def arhitectura
+
+    > Arhitectura - o organizare fundamentala care presupune planificarea unui sistem de baza 
+    cu o escalare posibila a functionalitatiilor in viitor. 
+        * componente, interactine, interactiunea cu mediu, cum sistemul evalueaza
+
+         -> a unui sistem ce defineste o interactiune cu componente, interactiunea cu mediu si cum sistemul evalueaza
+
+    
+    ==============    ==================     ============================    ============
+    = Pagina Web = -> = BookController =  -> = IBookService/BookService = -> = Database =
+    ==============    ==================     ============================    ============
+
+    > Componente - pentru a grupa si analiza legatura elementele codului
+
+    > Secventa - pentru a analiza flow-ul de interactiune dintre elementele codului  
+
+    > Desfasurarea - pentru a analiza cum sistemul va lucra la momentul deploymentul aplicatiei
+
+
+
+    > client server 
+    > peer to peer 
+    > master slave 
+
+    > Stare - 
