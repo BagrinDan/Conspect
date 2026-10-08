@@ -17,18 +17,6 @@
 > Obiective: Scalabilitate, perfomanta, dispnobilitate
 
 
-> Broker - 
-    * Logs - 
-
-    * Routing - 
-
-    * Adapter - 
-
-    * Inricer - 
-
-    * Reciver - XML/JSON и брокер жонглирует ими ????
-
-
 > Storage:
 
     * Persistant (In-Disk) -
@@ -112,7 +100,7 @@
     DHCP: 67 (клиент), 68 (сервер), UDP 
         * Использует UDP так как нельзя подключится к юзеру. У него нет АЙПИ
 
-    NTP: 123, UDP 
+    NTP: 123, UDP
         * UDP чтобы быстро обновлять время 
 
     SNMP: 161 (запросы), 162 (уведомления), UDP 
