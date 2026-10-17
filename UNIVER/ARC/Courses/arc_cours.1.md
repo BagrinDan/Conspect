@@ -7,4 +7,4 @@
     > Kf = Tn/Tn + Tr 
       1 / Kf = lambda
 
-    > 
+    > DiffServ / IntServ

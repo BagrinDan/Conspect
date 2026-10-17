@@ -1,4 +1,4 @@
-> DS -> Sintaxa, Semantica
+> Date structurare -> Sintaxa, Semantica
 
 > Date structurare - данные которые имеют строго определнный формат, 
 организованных в виде таблиц со строками и столбцами

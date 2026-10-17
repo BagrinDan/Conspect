@@ -1,0 +1,5 @@
+Password spraying
+Dictionary attack
+Bruteforce
+Rainbow attack
+Traffic intercetion
