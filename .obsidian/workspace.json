@@ -11,10 +11,14 @@
             "id": "4f93b444fe76f871",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "UNIVER/ARC/Courses/arc_cours.1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "arc_cours.1"
             }
           }
         ]
@@ -181,7 +185,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "4fae3dfddafbdd54",
+  "active": "4f93b444fe76f871",
   "lastOpenFiles": [
     "Conspect/Internships/Devops/roadmap.md",
     "Conspect/Internships/Devops/terraform.md",
