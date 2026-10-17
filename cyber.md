@@ -2,7 +2,7 @@ NGFW (Next-generation firewal)
 	Plato Alto, fortinet, pfsense
 
 IDS/IPS: Suricata, Snort
-
+Suricata, Snort, Fortinet, Palo Alto
 SIEM: Syslog, Netflow
 
 Instruments: 
@@ -11,3 +11,4 @@ Scapy
 AD
 
 Сегментация сети
+
