@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Security/Cyberkillchain/1.Reconnaissance/Passive/Domain Enum/Theory.md",
+                "file": "Security/Generic/Network/Protocols/ssh/Команды.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Theory"
+              "title": "Команды"
             }
           }
         ],
@@ -202,15 +202,22 @@
   },
   "active": "4019de3cd8926e7f",
   "lastOpenFiles": [
+    "Security/Generic/Network/Protocols/ssh/Теория.md",
+    "Security/Generic/Network/Protocols/ssh/Команды.md",
+    "Security/Generic/Network/Protocols/WellKnownProtocols.md",
+    "Security/Generic/Network/Protocols/ssh",
+    "Security/Generic/Network/Protocols",
+    "Security/Generic/Network/ISO-OSI and TCP-IP.md",
+    "Security/Generic/Network/atest.md",
+    "Security/Cyberkillchain/1.Reconnaissance/Passive/Domain Enum/Theory.md",
+    "Security/Generic/Network/(ARC) Attestation_Sensation.md",
     "Security/Cyberkillchain/1.Reconnaissance/Theory.md",
     "Security/Cyberkillchain/1.Reconnaissance/Passive/OSINT/SpiderFoot.md",
     "Security/Cyberkillchain/1.Reconnaissance/Passive/OSINT/OSINT.md",
-    "Security/Cyberkillchain/1.Reconnaissance/Passive/Domain Enum/Theory.md",
     "UNIVER/ARC/Labs/lab5/arc_lab5.md",
     "UNIVER/ARC/Labs/lab5/arc_lab5_SLAAC.md",
     "Untitled 1.md",
     "Untitled.md",
-    "Security/Generic/Network/atest.md",
     "UNIVER/ARC/Labs/lab5",
     "Security/Cyberkillchain/Base.md",
     "Security/Cyberkillchain/1.Reconnaissance/Passive/Domain Enum",
@@ -228,16 +235,9 @@
     "Security/Cyberkillchain/7.Actions and objects",
     "Security/Cyberkillchain/6.Command and Control/Botnet",
     "Security/Cyberkillchain/6.Command and Control",
-    "Security/Cyberkillchain/Actions and objects",
-    "Security/Cyberkillchain/Coomand and Control",
     "Security/Generic/Network/Base/TCP.md",
     "Security/Generic/Network/Base/UDP.md",
     "Security/Generic/Network/Base/NTP.md",
-    "Security/Generic/Network/Base/MAIL.md",
-    "Security/Generic/Network/Base/HTTP.md",
-    "Security/Generic/Network/Base/DNS.md",
-    "UNIVER/ARC/Labs/lab2/arc_lab2_rots.md",
-    "UNIVER/ARC/Labs/lab2/arc_lab2_vlan.md",
     "Pasted image 20261011112040.png",
     "Pasted image 20261011105713.png",
     "Pasted image 20261011105554.png"
