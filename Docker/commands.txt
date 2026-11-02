@@ -1,0 +1,4 @@
+
+
+
+> docker exec -it [from] ping [to]
