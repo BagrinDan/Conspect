@@ -1,0 +1,21 @@
+
+==================
+    План лабы 2
+==================
+
+> Тема: Система SOC для регистрации инцидентов
+
+> Брокер — Java
+
+> Pub: GO 
+
+> Sub: Python
+
+> K3s/Docker:
+    > Docker: Брокер, Pub 
+    > K3s: Sub, Databasese
+
+> Storage
+    *Transient (In-memory)
+
+    *Persistent (On-Disk) - PostgreSQL (SQLi), MariaDB (XSS)
