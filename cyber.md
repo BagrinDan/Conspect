@@ -9,6 +9,6 @@ Instruments:
 Wiresahrk, tshark, tcpdump
 Scapy
 AD
-a
+
 Сегментация сети
 
