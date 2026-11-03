@@ -1,0 +1,11 @@
+Tranzactie - tot intreg
+
+Race Condition - 
+
+Stateless - 
+Statefull - 
+
+X-Request-ID - 
+
+SOAP
+RestAPI

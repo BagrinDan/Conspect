@@ -1,7 +1,5 @@
 
-==================
     План лабы 1
-==================
 
 > Тема: Dezvoltarea unui sistem distribuit de colectare a telemetriei
 și a jurnalelor, bazat pe evenimente și pe modelul Publish/Subscribe.
@@ -31,3 +29,4 @@
     ===========================================================================
         pub1-2 -> Broker -> sub1-2 -> Storage (Loki, influxDB) -> Grafana
     ===========================================================================
+**Сокет** - интерфейс через которые приложение обмениваются данными
