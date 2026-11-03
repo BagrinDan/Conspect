@@ -8,7 +8,6 @@
 `nslookup` - похожий на dig
 `whois` - узнать владельца 
 
-
 `crt.sh` - база где сохранены TLS от DNS серверров 
 `SecurityTrails` 
 `Amass, 
